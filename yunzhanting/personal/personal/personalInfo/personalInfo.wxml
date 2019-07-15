@@ -1,0 +1,82 @@
+<!--page/personal/personalInfo/personalInfo.wxml-->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">个人信息</view>
+</cu-custom>
+<!-- 头像和用户名 -->
+<view class='personalInfo_userIcon'>
+  <!-- <image class='user_icon' src='/assets/images/ic_user_icon.png'></image> -->
+  <view class='user_icon'>
+    <image src='{{avatarUrl}}'></image>
+  </view>
+  <!-- <view class='user_name'>阮鲤</view> -->
+  <view class='user_name'>
+    <view>{{nickName}}</view>
+  </view>
+</view>
+<form bindsubmit='conserve'>
+  <view class='myForm'>
+    <view class="form_name">
+      <view class="form_title">*姓名</view>
+      <view class="form_right">
+        <input class='form_name_text' type='text' name='userName' value='{{userName}}' placeholder='请输入你的昵称'></input>
+        <image class='form_right_icon' src='/assets/images/ic_personal_list.png'></image>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">*性别</view>
+      <picker bindchange="SexChange" value="{{index}}" range="{{sex}}">
+        <view class="picker form_name_text">
+          {{index?sex[index]:'未填写'}}
+        </view>
+      </picker>
+    </view>
+    <view class="form_name">
+      <view class="form_title">微信绑定手机号码</view>
+      <view class="form_right">
+        <!-- <input class='form_name_text' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" type='text' name='wxPhone' value='{{wxPhone}}' placeholder='请输入您的手机号码'></input> -->
+        <button class='form_wxPhone' open-type="getPhoneNumber" disabled='{{isClick}}' bindgetphonenumber="getPhoneNumber">{{wxPhone}}</button>
+        <image class='form_right_icon' src='/assets/images/ic_personal_list.png'></image>
+      </view>
+    </view>
+    <view class="form_name">
+      <view class="form_title">*常用手机号码</view>
+      <view class="form_right">
+        <input class='form_name_text' type='text' name='userPhone' value='{{userPhone}}' placeholder='请输入您的手机号码'></input>
+        <image class='form_right_icon' src='/assets/images/ic_personal_list.png'></image>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">*地区</view>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="name">
+        <view class="picker form_name_text" wx:if='{{isModel == true}}'>
+          {{multiArray[0][multiIndex[0]].name}}{{multiArray[1].length > 0 ?(" " + multiArray[1][multiIndex[1]].name):""}}{{multiArray[2].length > 0 ?(" " + multiArray[2][multiIndex[2]].name):""}}
+        </view>
+        <view class="picker form_name_text" wx:if='{{isModel == false}}'>
+          {{region[0]}} {{region[1]}}
+        </view>
+      </picker>
+    </view>
+    <view class="form_name">
+      <view class="form_title">公司</view>
+      <view class="form_right">
+        <input class='form_name_text' type='text' name='company' value='{{company}}' placeholder='未填写'></input>
+        <image class='form_right_icon' src='/assets/images/ic_personal_list.png'></image>
+      </view>
+    </view>
+    <view class="form_name">
+      <view class="form_title">部门</view>
+      <view class="form_right">
+        <input class='form_name_text' type='text' name='section' value='{{section}}' placeholder='未填写'></input>
+        <image class='form_right_icon' src='/assets/images/ic_personal_list.png'></image>
+      </view>
+    </view>
+    <view class="form_name">
+      <view class="form_title">职位</view>
+      <view class="form_right">
+        <input class='form_name_text' type='text' name='position' value='{{position}}' placeholder='未填写'></input>
+        <image class='form_right_icon' src='/assets/images/ic_personal_list.png'></image>
+      </view>
+    </view>
+  </view>
+  <button class='btn' form-type='submit'>保存</button>
+</form>

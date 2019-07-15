@@ -1,0 +1,78 @@
+/* pages/page/personal/about/about.wxss */
+
+/* 富文本 */
+@import "../../../wxParse/wxParse.wxss";
+
+/* 顶部 */
+
+.page_title {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+}
+
+.header_head {
+  width: 100%;
+  height: 150rpx;
+  padding-top: 50rpx;
+  padding-left: 28rpx;
+  background: linear-gradient(90deg, #37b2f7 0%, #abe72a 100%);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.header_back {
+  width: 23rpx;
+  height: 41rpx;
+  margin-right: 30rpx;
+}
+
+.header_text {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+  color: #fff;
+}
+
+.header_search {
+  width: 100%;
+  height: 114rpx;
+  margin-top: 150rpx;
+  font-size: 32rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #a9a9a9;
+  background: linear-gradient(90deg, #37b2f7 0%, #abe72a 100%);
+}
+
+.cu-bar .search-form {
+  background: #fff;
+}
+
+.header_icon {
+  font-size: 38rpx;
+  color: #a9a9a9;
+}
+
+/* banner */
+
+.about_banner {
+  width: 100%;
+  height: 400rpx;
+}
+
+.about_banner_pic {
+  width: 100%;
+  height: 100%;
+}
+
+/* 内容 */
+
+.content {
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}

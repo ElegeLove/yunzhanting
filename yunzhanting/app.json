@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/favorites/favorites",
+    "pages/classify/classify",
+    "pages/personal/personal"
+  ],
+  "subpackages": [
+    {
+      "root": "home",
+      "name": "home",
+      "pages": [
+        "home/productInfo/productInfo",
+        "home/searchInfo/searchInfo",
+        "home/explosives/explosives",
+        "home/nullNetwork/nullNetwork"
+      ]
+    },
+    {
+      "root": "personal",
+      "name": "personal",
+      "pages": [
+        "personal/personalInfo/personalInfo",
+        "personal/understand/understand",
+        "personal/mySub/mySub",
+        "personal/infoDisplay/infoDisplay",
+        "personal/about/about"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#848484",
+    "selectedColor": "#8fc31f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "assets/images/ic_home_active.png",
+        "iconPath": "assets/images/ic_home.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "selectedIconPath": "assets/images/ic_classify_active.png",
+        "iconPath": "assets/images/ic_classify.png"
+      },
+      {
+        "pagePath": "pages/favorites/favorites",
+        "text": "我的收藏",
+        "selectedIconPath": "assets/images/ic_favorites_active.png",
+        "iconPath": "assets/images/ic_favorites.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "selectedIconPath": "assets/images/ic_personal_active.png",
+        "iconPath": "assets/images/ic_personal.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx45533ccb907e277f"
+  ]
+}

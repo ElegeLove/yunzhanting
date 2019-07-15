@@ -1,0 +1,61 @@
+<!--personal/personal.wxml-->
+<!-- 顶部 -->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">个人中心</view>
+</cu-custom>
+<view class='userinfo_main'>
+  <view class='userinfo'>
+    <view>
+      <!-- <image class='user_icon' src='/assets/images/ic_user.png'></image> -->
+      <view class='user_icon'>
+        <!-- <open-data type="userAvatarUrl"></open-data> -->
+        <image src='{{userUrl}}'></image>
+      </view>
+      <view class='user_name'>
+        <!-- <text>用户昵称</text> -->
+        <view>{{userName}}</view>
+      </view>
+    </view>
+    <view class='user_binding' bindtap='bindUserInfo'>
+      <image class='user_binding_info' src='/assets/images/ic_personal_info.png'></image>
+      <view class='user_binding_text'>信息添加/修改</view>
+      <image class='user_binding_right' src='/assets/images/ic_personal_right.png'></image>
+    </view>
+  </view>
+  <view class='user_box'>
+    <view class='user_main'>
+      <view class='user_main_list border_btm' bindtap='bindUnderstand'>
+        <view>
+          <image class='user_main_icon' src='/assets/images/ic_new_understand.png'></image>
+          <view class='user_main_info'>
+            <text>新品了解</text>
+          </view>
+        </view>
+      </view>
+      <view class='user_main_list border_btm border_left' bindtap='bindMySub'>
+        <view>
+          <image class='user_main_icon' src='/assets/images/ic_my_submit.png'></image>
+          <view class='user_main_info'>
+            <text>我的提交</text>
+          </view>
+        </view>
+      </view>
+      <view class='user_main_list' bindtap='bindInfoDisplay'>
+        <view>
+          <image class='user_main_icon' src='/assets/images/ic_show_info.png'></image>
+          <view class='user_main_info'>
+            <text>信息展示</text>
+          </view>
+        </view>
+      </view>
+      <view class='user_main_list border_left' bindtap='bindAbout'>
+        <view>
+          <image class='user_main_icon' src='/assets/images/ic_about_us.png'></image>
+          <view class='user_main_info'>
+            <text>关于我们</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

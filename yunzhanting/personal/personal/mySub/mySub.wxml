@@ -1,0 +1,41 @@
+<!--page/personal/mySub/mySub.wxml-->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">gradualBluegreen
+  <view class='page_title' slot="backText">我的提交</view>
+</cu-custom>
+<!-- 内容 -->
+<view class='mySub_null' wx:if="{{ mySubList == [] || mySubList == null || mySubList == ''}}">
+  <image src='/assets/images/ic_mySub_null.png'></image>
+  <view class='mySub_null_text'>暂无信息</view>
+</view>
+<view class='mySub_main'>
+  <view class='mySub_list' wx:for='{{mySubList}}' wx:key bindtap="bindInfo">
+    <view class='mySub_top'>
+      <!-- <view class='mySub_list_pic'> -->
+      <image class='mySub_list_pic' src='{{item.smallImgPath}}'></image>
+      <!-- </view> -->
+      <view class='mySub_list_text'>
+        <view class='title'>{{item.name}}</view>
+        <view class='info'>{{item.abbr}}</view>
+        <view class='showInfo'>
+          <view class='left' wx:if="{{item.joinGroupLib == 1}}">
+            <image class='library' src='/assets/images/ic_library.png'></image>
+            <text>已入集团库</text>
+          </view>
+          <view wx:if="{{item.joinGroupCore == 1}}">
+            <image class='inventory' src='/assets/images/ic_inventory.png'></image>
+            <text>已入核心能力清单</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='mySub_bottom'>
+      <view class='mySub_bottom_info'>
+        {{item.commitRemark}}
+      </view>
+      <!-- <view class='mySub_bottom_infos' wx:if="{{feedback == 2}}">
+        反馈原因：希望获取更详细的了解
+      </view> -->
+      <view class='mySub_bottom_time'>{{item.commitTime}}</view>
+    </view>
+  </view>
+</view>

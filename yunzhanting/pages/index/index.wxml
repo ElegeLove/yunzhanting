@@ -1,0 +1,106 @@
+<!-- 顶部 -->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">云展厅</view>
+</cu-custom>
+<view class='my_pages'>
+  <view class='header_search'>
+    <view class='header_main_search' bindtap='bindSearch'>
+      <view class="header_main_pic">
+        <image src='/assets/images/ic_search.png'></image>
+      </view>
+      <input type="text" placeholder="路由器" disabled='disabled' confirm-type="search" bindinput="searchIcon"></input>
+    </view>
+  </view>
+
+  <!-- </view> -->
+  <!-- 轮播 -->
+  <swiper class="card-swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#666666" indicator-active-color="#8FC31F">
+    <swiper-item wx:for="{{banner.childrenList}}" bindtap='bindInfo' data-type='{{item.sourceType}}' data-sourceId='{{item.sourceId}}' wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.imgPath}}" mode="aspectFill"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+  <!-- 选项卡 -->
+  <scroll-view scroll-x class="bg-white nav">
+    <view class="main_car text-center {{tabListLenght < 4?'mainflex':''}}">
+      <view class="cu-item {{index==TabCur?'text-orange cur':''}}" wx:for="{{homeList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+        {{item.name}}
+      </view>
+    </view>
+    <view class="main_bar">
+      <view class='main_bar_list' wx:for="{{homeList[TabCur].childrenList}}" data-type='{{m.sourceType}}' data-sourceId='{{m.sourceId}}' wx:key wx:for-item="m" bindtap="bindInfo" data-id="{{index}}">
+        <view class='bar_list_pic'>
+          <image src="{{m.smallImgPath}}"></image>
+        </view>
+        <text class='bar_list_title'>{{m.name}}</text>
+        <view class='bar_list_main'>
+          <view class='left' wx:if="{{m.joinGroupLib == 1}}">
+            <image class='library' src='{{library}}'></image>
+            <view>已入集团库</view>
+          </view>
+          <view class='right' wx:if="{{m.joinGroupCore == 1}}">
+            <image class='inventory' src='{{inventory}}'></image>
+            <view>已入核心能力清单</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 专题展示区 -->
+  <view class='special'>
+    <view class='special_title'>
+      <image class='title_pic' src='{{showLeft}}'></image>
+      <text class='special_title_text'>{{special.name}}</text>
+      <image class='title_pic' src='{{showRight}}'></image>
+    </view>
+    <view class='special_single' wx:for="{{special.childrenList}}" wx:key>
+      <image bindtap='bindInfo' data-type='{{item.sourceType}}' data-sourceId='{{item.sourceId}}' src='{{item.imgPath}}'></image>
+    </view>
+  </view>
+  <!--  家居展示区 -->
+  <view class='residence'>
+    <view class='residence_title'>
+      <image class='title_pic' src='/assets/images/homeLeft.png'></image>
+      <text class='residence_title_text'>{{residence.name}}</text>
+      <image class='title_pic' src='/assets/images/homeRight.png'></image>
+    </view>
+    <view class='residence_pic' wx:for='{{residence.childrenList}}' wx:key bindtap='bindInfo' data-type='{{item.sourceType}}' data-sourceId='{{item.sourceId}}'>
+      <image src="{{item.imgPath}}"></image>
+    </view>
+    <view class='residence_list'>
+      <view class='residence_list_main' wx:for='{{reHome}}' wx:key bindtap="bindInfoData" data-sourceId='{{item.id}}'>
+        <view class='residence_list_pic'>
+          <image src="{{item.smallImgPath}}"></image>
+        </view>
+        <view class='residence_list_title'>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='residence_list_info'>
+          <text>{{item.abbr}}</text>
+        </view>
+        <view class='residence_list_show'>
+          <view class='left' wx:if="{{item.joinGroupLib == 1}}">
+            <image class='library' src='{{library}}'></image>
+            <view>已入集团库</view>
+          </view>
+          <view class='right' wx:if="{{item.joinGroupCore == 1}}">
+            <image class='inventory' src='{{inventory}}'></image>
+            <view>已入核心能力清单</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 今日推荐 -->
+  <view class='recommend'>
+    <view class='recommend_title'>
+      <image class='title_pic' src='{{showLeft}}'></image>
+      <text class='recommend_title_text'>{{recommend.name}}</text>
+      <image class='title_pic' src='{{showRight}}'></image>
+    </view>
+    <view class='recommend_single' wx:for="{{recommend.childrenList}}" wx:key>
+      <image bindtap='bindInfo' data-type='{{item.sourceType}}' data-sourceId='{{item.sourceId}}' src='{{item.imgPath}}'></image>
+    </view>
+  </view>
+</view>

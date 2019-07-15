@@ -1,0 +1,145 @@
+/* pages/classify/classify.wxss */
+
+/* 顶部 */
+
+.page_title {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+}
+
+.cu-bar .action:first-child>text[class*="cuIcon-"] {
+  margin-left: 0rpx;
+  margin-right: 0.3em;
+}
+
+.cu-bar .action>text[class*="cuIcon-"], .cu-bar .action>view[class*="cuIcon-"] {
+  font-size: 0rpx;
+}
+
+/* 导航主体 */
+
+.content {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.content_left {
+  width: 24%;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  font-size: 30rpx;
+  font-family: "PingFang-SC-Bold";
+  font-weight: 500;
+  color:#333;
+}
+
+.content_right {
+  width: 76%;
+  height: 100%;
+  padding: 0 15rpx;
+  text-align: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content_left_list {
+  width: 100%;
+  padding: 25rpx 25rpx 26rpx 16rpx;
+}
+
+.list_active {
+  background: #f5f6f8;
+}
+
+.list_actives {
+  width: 100%;
+  background: #f5f6f8;
+  color: #8fc31f;
+  border-left: 8rpx solid #8fc31f;
+  padding-left: 8rpx;
+}
+
+.content_right_search {
+  width: 100%;
+  height: 56rpx;
+  margin: 22rpx 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 28rpx;
+  padding: 0 40rpx;
+}
+
+.content_right_search input {
+  background: #fff;
+  text-align: left;
+  padding-left: 20rpx;
+}
+
+.content_right_pic {
+  width: 32rpx;
+  height: 30rpx;
+}
+
+.content_right_pic image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 右侧内容 */
+
+.content_right_list {
+  background: #fff;
+  padding: 20rpx 17rpx 29rpx 17rpx;
+  margin-bottom: 20rpx;
+}
+
+.right_list_title {
+  line-height: 70rpx;
+  font-size: 30rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.title_pic {
+  width: 27rpx;
+  height: 22rpx;
+}
+
+.title_text {
+  margin: 0 20rpx;
+}
+
+.right_list_main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right_list_box {
+  text-align: center;
+  margin: 12rpx 15rpx;
+}
+
+.right_list_box image {
+  width: 132rpx;
+  height: 135rpx;
+}
+
+.right_list_name {
+  width: 132rpx;
+  font-size: 24rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,162 @@
+/* pages/page/home/searchInfo/searchInfo.wxss */
+
+.my_pages {
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 顶部 */
+
+.page_title {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+}
+
+.header_head {
+  width: 100%;
+  height: 150rpx;
+  padding-top: 50rpx;
+  padding-left: 28rpx;
+  background: linear-gradient(90deg, #37b2f7 0%, #abe72a 100%);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.header_back {
+  width: 23rpx;
+  height: 41rpx;
+  margin-right: 30rpx;
+}
+
+.header_text {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+  color: #fff;
+}
+
+.header_search {
+  width: 100%;
+  padding: 10rpx 32rpx;
+  font-size: 32rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #a9a9a9;
+}
+
+.cu-bar .search-form {
+  background: #fff;
+  margin: 0;
+}
+
+.header_icon {
+  font-size: 38rpx;
+  color: #a9a9a9;
+}
+
+/* 内容 */
+
+.searchInfo_null {
+  width: 100%;
+  height: 440rpx;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.searchInfo_null image {
+  width: 100%;
+  height: 100%;
+}
+
+.searchInfo_null_text {
+  font-size: 36rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #666;
+  line-height: 21rpx;
+}
+
+.searchInfo_main {
+  width: 100%;
+  height: 100%;
+  padding-left: 30rpx;
+  background: #fff;
+}
+
+.searchInfo_list {
+  width: 100%;
+  padding: 20rpx 30rpx 20rpx 0;
+  border-bottom: 1rpx solid #f3f3f3;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.searchInfo_list_pic {
+  width: 160rpx;
+  height: 150rpx;
+  margin-right: 24rpx;
+}
+
+.searchInfo_list_pic image {
+  width: 160rpx;
+  height: 150rpx;
+}
+
+.searchInfo_list_text {
+  width: 70%;
+}
+
+.title {
+  width: 100%;
+  font-size: 30rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #2a2a2a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info {
+  width: 100%;
+  height: 82rpx;
+  font-size: 24rpx;
+  font-family: "PingFang-SC-Regular";
+  font-weight: 400;
+  color: #666;
+  line-height: 76rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.showInfo {
+  width: 100%;
+  font-size: 22rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #666;
+  display: flex;
+  align-content: center;
+}
+
+.showInfo .left {
+  margin-right: 89rpx;
+}
+
+.library {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.inventory {
+  width: 17rpx;
+  height: 20rpx;
+  margin-right: 18rpx;
+}

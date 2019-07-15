@@ -1,0 +1,191 @@
+/* pages/page/personal/understand/understand.wxss */
+
+/* 顶部 */
+
+.page_title {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+}
+
+.header_head {
+  width: 100%;
+  height: 150rpx;
+  padding-top: 50rpx;
+  padding-left: 28rpx;
+  background: linear-gradient(90deg, #37b2f7 0%, #abe72a 100%);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.header_back {
+  width: 23rpx;
+  height: 41rpx;
+  margin-right: 30rpx;
+}
+
+.header_text {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+  color: #fff;
+}
+
+.header_search {
+  width: 100%;
+  height: 114rpx;
+  font-size: 32rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #a9a9a9;
+  background: linear-gradient(90deg, #37b2f7 0%, #abe72a 100%);
+}
+
+.cu-bar .search-form {
+  background: #fff;
+}
+
+.header_icon {
+  font-size: 38rpx;
+  color: #a9a9a9;
+}
+
+/* 空状态 */
+
+.under_null {
+  width: 100%;
+  height: 440rpx;
+  margin-top: 30%;
+  text-align: center;
+}
+
+.under_null image {
+  width: 100%;
+  height: 100%;
+}
+
+.under_null_text {
+  font-size: 36rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #666;
+  line-height: 21rpx;
+}
+
+/* 内容 */
+
+.new_main {
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}
+
+.understand {
+  width: 100%;
+  padding: 12rpx 0 20rpx 30rpx;
+  background: #fff;
+}
+
+.understand_title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.title_pic {
+  width: 28rpx;
+  height: 33rpx;
+  margin-right: 17rpx;
+}
+
+.title_text {
+  font-size: 32rpx;
+  font-family: "PingFang-SC-Bold";
+  font-weight: bold;
+  color: #333;
+  line-height: 83rpx;
+}
+
+.understand_list {
+  width: 100%;
+  padding: 20rpx 100rpx 20rpx 0;
+  border-bottom: 1rpx solid #f3f3f3;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.understand_list_pic {
+  width: 160rpx;
+  height: 140rpx;
+  /* padding: 12rpx 0 8rpx 0; */
+  margin-right: 24rpx;
+  background: #e5e6eb;
+}
+
+.understand_list_pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.understand_list_text {
+  width: 80%;
+}
+
+.title {
+  width: 100%;
+  font-size: 30rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #2a2a2a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info {
+  width: 100%;
+  height: 80rpx;
+  font-size: 24rpx;
+  font-family: "PingFang-SC-Regular";
+  font-weight: 400;
+  color: #666;
+  line-height: 76rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.showInfo {
+  width: 100%;
+  font-size: 22rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #666;
+  display: flex;
+  align-content: center;
+}
+
+.showInfo .left {
+  margin-right: 89rpx;
+}
+
+.library {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.inventory {
+  width: 17rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}

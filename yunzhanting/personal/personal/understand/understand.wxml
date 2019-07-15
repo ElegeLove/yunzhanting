@@ -1,0 +1,51 @@
+<!--page/personal/understand/understand.wxml-->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">gradualBluegreen
+  <view class='page_title' slot="backText">新品了解</view>
+</cu-custom>
+<!-- 搜索框 -->
+<view class='header_search'>
+  <view class="cu-bar search" bindtap='bindSearch'>
+    <view class="search-form round">
+      <text class="header_icon cuIcon-search"></text>
+      <input type="text" placeholder="路由器" disabled='disabled' confirm-type="search" bindinput="searchIcon"></input>
+    </view>
+  </view>
+</view>
+<!-- 内容 -->
+<view class='under_null' wx:if="{{ swiperListLength <= 0 }}">
+  <image src='/assets/images/ic_mySub_null.png'></image>
+  <view class='under_null_text'>暂无信息</view>
+</view>
+<view class='new_main' wx:if="{{ swiperListLength > 0 }}">
+  <swiper class="screen-swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#666666" indicator-active-color="#8FC31F">
+    <swiper-item wx:for="{{swiperList}}" wx:key bindtap="bindInfo" data-id='{{item.id}}'>
+      <image src="{{item.imgPath}}" mode="aspectFill"></image>
+      <video src="{{item.imgPath}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
+  <view class='understand'>
+    <view class='understand_title'>
+      <image class='title_pic' src='/assets/images/ic_understand.png'></image>
+      <text class='title_text'>新品上新</text>
+    </view>
+    <view class='understand_list' wx:for='{{swiperList}}' wx:key bindtap="bindInfo" data-id='{{item.id}}'>
+      <view class='understand_list_pic'>
+        <image src='{{item.smallImgPath}}'></image>
+      </view>
+      <view class='understand_list_text'>
+        <view class='title'>{{item.name}}</view>
+        <view class='info'>{{item.abbr}}</view>
+        <view class='showInfo'>
+          <view class='left' wx:if="{{item.joinGroupLib == 1}}">
+            <image class='library' src='/assets/images/ic_library.png'></image>
+            <text>已入集团库</text>
+          </view>
+          <view wx:if="{{item.joinGroupCore == 1}}">
+            <image class='inventory' src='/assets/images/ic_inventory.png'></image>
+            <text>已入核心能力清单</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

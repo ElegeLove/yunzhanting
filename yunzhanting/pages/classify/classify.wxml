@@ -1,0 +1,37 @@
+<!--pages/classify/classify.wxml-->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">分类</view>
+</cu-custom>
+<view class='content' style='height:{{winHeight}}px'>
+  <view class="content_left">
+    <view class="content_left_list TabCur">
+      <text class="TabCur">分类</text>
+    </view>
+    <view class="content_left_list {{index==TabCur?'list_active':''}}" wx:for='{{contentLeft}}' wx:key data-index='{{index}}' bindtap="tabSelect" data-id="{{item.id}}">
+      <text class="{{index==TabCur?'list_actives':''}}">{{item.name}}</text>
+    </view>
+  </view>
+  <view class="content_right">
+    <view class='content_right_search' bindtap='bindSearch'>
+      <view class="content_right_pic">
+        <image src='/assets/images/ic_search.png'></image>
+      </view>
+      <input type="text" placeholder="路由器" disabled='disabled'></input>
+    </view>
+    <view class="content_right_list" wx:for='{{contentList}}' wx:key>
+      <view class='right_list_title'>
+        <image class='title_pic' src='/assets/images/showLeft.png'></image>
+        <text class='title_text'>{{item.name}}</text>
+        <image class='title_pic' src='/assets/images/showRight.png'></image>
+      </view>
+      <view class='right_list_main'>
+        <view class='right_list_box' wx:for='{{item.goodsList}}' wx:for-item="m" wx:key bindtap='bindInfo' data-sourceId='{{m.id}}'>
+          <image src='{{m.smallImgPath}}'></image>
+          <view class='right_list_name'>
+            {{m.name}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

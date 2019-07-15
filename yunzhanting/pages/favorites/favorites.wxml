@@ -1,0 +1,106 @@
+<!--favorites/favorites.wxml-->
+<!-- 顶部 -->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">云展厅</view>
+</cu-custom>
+<!-- 内容 -->
+<view class='my_pages'>
+  <view class='favorites_null' wx:if="{{ favList == [] || favList == null || favList == ''}}">
+    <image src='/assets/images/ic_favorites_null.png'></image>
+    <view class='favorites_null_text'>
+      暂无收藏，赶快去收藏一下吧~
+    </view>
+  </view>
+  <view class='favorites'>
+    <view class="fav_title {{favList[index + 1].catalogueId == favList[index].catalogueId?'':'marginBtm'}}" wx:for='{{favList}}' wx:key>
+      <view class="cu-bar fav_title_pic  {{favList[index - 1].catalogueId == favList[index].catalogueId?'hiddenData':''}}">
+        <image bindtap="carAll" data-id="{{item.catalogueId}}" class='fav_icon_list' src="{{item.carAllid==true?'/assets/images/ic_favorites_list_active.png':'/assets/images/ic_favorites_list.png'}}"></image>
+        <view class="action fav_title_text">
+          {{item.secondCataName}}
+        </view>
+      </view>
+      <view class="cu-list bg-white menu-avatar">
+        <view class="fav_main {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+          <view class="fcv_info_inp {{favList[index].catalogueId == favList[index + 1].catalogueId?'fav_btm':''}}">
+            <view class='fcv_info'>
+              <!-- <view>1</view> -->
+              <view>
+                <image bindtap="carChange" data-carList='{{item.catalogueId}}' data-id="{{index}}" class='fav_icon_list' src="{{item.setid == true?'/assets/images/ic_favorites_list_active.png':'/assets/images/ic_favorites_list.png'}}"></image>
+              </view>
+              <view class='fcv_info_main'>
+                <view class='fcv_info_pic'>
+                  <image src='{{ item.smallImgPath }}'></image>
+                </view>
+                <view class='fcv_info_right' bindtap="bindInfo" data-sourceId='{{item.id}}'>
+                  <view class='fcv_info_title'>{{item.name}}</view>
+                  <view class='fcv_info_data'>{{item.abbr}}</view>
+                  <view class='fcv_info_showInfo'>
+                    <view class='left' wx:if="{{item.joinGroupLib == 1}}">
+                      <image class='library' src='/assets/images/ic_library.png'></image>
+                      <text>已入集团库</text>
+                    </view>
+                    <view wx:if="{{item.joinGroupCore == 1}}">
+                      <image class='inventory' src='/assets/images/ic_inventory.png'></image>
+                      <text>已入核心能力清单</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class='fcv_info_feedback'>
+              <view>反馈原因</view>
+              <view class='fcv_info_feedback_right' bindtap="showModal" data-id="{{item.id}}" data-target="bottomModal">
+                <view wx:if='{{item.target}}'>
+                  {{item.target=='infoData'?'希望获取更详细的了解':''}} {{item.target=='message'?'反馈留言':''}}
+                  <!-- {{activeCur}} -->
+                  <!-- {{item.id == id}} -->
+                </view>
+                <view wx:if="{{!item.target}}">
+                  请选择
+                </view>
+                <image src='/assets/images/ic_favorites_select.png'></image>
+              </view>
+            </view>
+            <view>
+              <input class='inputData' bindinput="bindinput" value='{{valData}}' data-id="{{item.id}}" disabled="{{item.target!='infoData'?'':'disabled'}}" placeholder='请填写需要反馈的问题'></input>
+            </view>
+          </view>
+          <view class="move" bindtap='bindDel' data-goodsId='{{item.id}}'>
+            <view class="bg-red">删除</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='fcv_foot' wx:if="{{ favList != []}}">
+    <view class='fcv_foot_all'>
+      <image bindtap="allChange" class='fav_icon_list' src="{{activeCar==true?'/assets/images/ic_favorites_list_active.png':'/assets/images/ic_favorites_list.png'}}"></image>
+      <view class='fcv_foot_all_text'>全选</view>
+    </view>
+    <view class='fcv_foot_right'>
+      <button class='btn_left' bindtap='clear'>取消</button>
+      <button class='btn_right' bindtap='subSure'>提交需求</button>
+    </view>
+  </view>
+</view>
+<!-- 模态框 -->
+<view class="cu-modal home_model bottom-modal {{modalshow=='bottomModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class='modal_title'>
+      <text>反馈原因</text>
+    </view>
+    <view class='modal_list' bindtap="modelChange" data-type="1" data-cur="infoData">
+      <text>希望获取更详细的了解</text>
+      <image class='modal_list_ic' src="{{activeCur=='infoData'?'/assets/images/ic_favorites_list_active2.png':'/assets/images/ic_favorites_list.png'}}"></image>
+      <!-- <image src='/assets/images/ic_favorites_list_active2.png'></image> -->
+    </view>
+    <view class='modal_list' bindtap="modelChange" data-type="2" data-cur="message">
+      <text>反馈留言</text>
+      <image class='modal_list_ic' src="{{activeCur=='message'?'/assets/images/ic_favorites_list_active2.png':'/assets/images/ic_favorites_list.png'}}"></image>
+      <!-- <image src='/assets/images/ic_favorites_list_active.png'></image> -->
+    </view>
+    <view class="bg-white modal_foot">
+      <button class='modal_btn modal_sure' bindtap="hideModal">关闭</button>
+    </view>
+  </view>
+</view>

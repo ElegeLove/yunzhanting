@@ -1,0 +1,44 @@
+<!--page/home/searchInfo/searchInfo.wxml-->
+<!-- 头部 -->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">搜索</view>
+</cu-custom>
+<view class='my_pages'>
+  <!-- 搜索框 -->
+  <view class='header_search'>
+    <view class="cu-bar search">
+      <view class="search-form round">
+        <text class="header_icon cuIcon-search"></text>
+        <input type="text" placeholder="路由器" focus="{{inputShowed}}" confirm-type="search" bindinput="searchInfo"></input>
+      </view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class='searchInfo_null' wx:if="{{searchList.length <= 0}}">
+    <image src='/assets/images/ic_search_null.png'></image>
+    <view class='searchInfo_null_text'>
+      无搜索结果，换个词试试吧~
+    </view>
+  </view>
+  <view class='searchInfo_main'>
+    <view class='searchInfo_list' wx:for='{{searchList}}' wx:key bindtap="bindInfo" data-sourceId='{{item.id}}'>
+      <view class='searchInfo_list_pic'>
+        <image src='{{item.smallImgPath}}'></image>
+      </view>
+      <view class='searchInfo_list_text'>
+        <view class='title'>{{item.name}}</view>
+        <view class='info'>{{item.abbr}}</view>
+        <view class='showInfo'>
+          <view class='left' wx:if="{{item.joinGroupLib == 1}}">
+            <image class='library' src='/assets/images/ic_library.png'></image>
+            <text>已入集团库</text>
+          </view>
+          <view wx:if="{{item.joinGroupCore == 1}}">
+            <image class='inventory' src='/assets/images/ic_inventory.png'></image>
+            <text>已入核心能力清单</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

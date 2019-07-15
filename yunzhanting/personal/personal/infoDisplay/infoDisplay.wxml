@@ -1,0 +1,15 @@
+<!--pages/page/personal/infoDisplay/infoDisplay.wxml-->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">gradualBluegreen
+  <view class='page_title' slot="backText">信息展示</view>
+</cu-custom>
+
+<!-- 内容图片 -->
+<view class='null_pic' wx:if="{{ picList == [] || picList == null || picList == ''}}">
+  <image src='/assets/images/ic_infoDisplay_null.png'></image>
+  <view class='null_text'>暂无信息</view>
+</view>
+<view class='infoDisplay'>
+  <view class='infoDisplay_main' wx:for='{{picList}}' wx:key>
+    <image class='infoDisplay_pic' src='{{item.imgPath}}'></image>
+  </view>
+</view>

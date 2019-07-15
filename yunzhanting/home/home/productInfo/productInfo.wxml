@@ -1,0 +1,93 @@
+<!--page/home/productInfo/productInfo.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<!-- 顶部 -->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">产品详情</view>
+</cu-custom>
+<!-- 内容 -->
+<view class='my_pages'>
+  <view class='info_data'>
+    <view class='info_nav'>
+      <view class='info_nav_left'>{{productInfo.firstCataName}}</view>
+      <image src='/assets/images/ic_secondary.png'></image>
+      <view class='info_nav_right'>{{productInfo.secondCataName}}</view>
+    </view>
+    <view class='info_pic'>
+      <image src='{{productInfo.imgPath}}'></image>
+    </view>
+    <text class='info_title'>{{productInfo.name}}</text>
+    <view class='info_example'>
+      <view class='left' wx:if="{{productInfo.joinGroupLib == 1}}">
+        <image class='library' src='/assets/images/ic_library.png'></image>
+        <view>已入集团库</view>
+      </view>
+      <view class='right' wx:if="{{productInfo.joinGroupCore == 1}}">
+        <image class='inventory' src='/assets/images/ic_inventory.png'></image>
+        <view>已入核心能力清单</view>
+      </view>
+    </view>
+  </view>
+  <!-- 产品介绍 -->
+  <view class='introduction'>
+    <view class='introduction_title'>
+      <image class='title_pic' src='/assets/images/ic_introduction.png'></image>
+      <text class='title_text'>产品介绍</text>
+      <image class='title_pic' src='/assets/images/ic_introduction.png'></image>
+    </view>
+    <view class='content'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+    <view class='introduction_goods' wx:if="{{productInfo.goodsLink != ''}}">
+      <image class='introduction_goods_pic' src='/assets/images/ic_goShop.png'></image>
+      <navigator class='introduction_goGoods' target="miniProgram" open-type="navigate" app-id="wx45533ccb907e277f" path="/pages/index/index?turnurl=detail/{{productInfo.goodsLink}}" extra-data="" version="release">打开智品商城详情页</navigator>
+    </view>
+  </view>
+</view>
+<view class='page_btns'>
+  <button class='goShoping' bindtap='goGoods'>去商城逛逛</button>
+  <button class='goTop' bindtap='goTop' hidden='{{!floorstatus}}'>返回顶部</button>
+</view>
+<!-- 底部 -->
+<view class="cu-bar tabbar bg-white shadow foot footer">
+  <view class="foot_left">
+    <view class="action" bindtap="backIndex">
+      <image class='foot_left_pic' src='/assets/images/shouye_icon.png'></image>
+      <view class="text-gray">首页</view>
+    </view>
+    <view class="action" bindtap="backFav">
+      <image class='foot_left_pic' src='/assets/images/wodeshoucang_icon.png'></image>
+      <view class="text-gray">我的收藏</view>
+    </view>
+    <view class="action" bindtap="NavChange">
+      <image class='foot_left_pic' src="{{favactive==true?'/assets/images/favorites_active_icon.png':'/assets/images/favorites_icon.png'}}"></image>
+      <view class="text-gray">收藏</view>
+    </view>
+  </view>
+  <view class="foot_right">
+    <button class='foot_right_btn' bindtap="showModal" data-target="bottomModal">需求提交</button>
+  </view>
+</view>
+<!-- 模态框 -->
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':'hidden'}}">
+  <view class="cu-dialog">
+    <view class='modal_title'>
+      <text>选择需求类型</text>
+    </view>
+    <view class='modal_list' bindtap="modelChange" data-cur="infoData">
+      <text>希望获取更详细的了解</text>
+      <image class='modal_list_ic' src="{{activeCur=='infoData'?'/assets/images/ic_favorites_list_active2.png':'/assets/images/ic_favorites_list.png'}}"></image>
+      <!-- <image src='/assets/images/ic_favorites_list_active2.png'></image> -->
+    </view>
+    <view class='modal_list' bindtap="modelChange" data-cur="message">
+      <text>反馈留言</text>
+      <image class='modal_list_ic' src="{{activeCur=='message'?'/assets/images/ic_favorites_list_active2.png':'/assets/images/ic_favorites_list.png'}}"></image>
+    </view>
+    <view class='modal_area'>
+      <textarea class='modal_text' bindinput="bindinput" disabled="{{activeCur=='infoData'?'disabled':''}}" placeholder='请填写需要反馈的问题'></textarea>
+    </view>
+    <view class="cu-bar bg-white modal_foot">
+      <button class='modal_btn modal_cancel' bindtap="hideModal">取消</button>
+      <button class='modal_btn modal_sure' bindtap='subSure'>确定</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,143 @@
+/* pages/page/personal/mySub/mySub.wxss */
+
+/* 顶部 */
+.page_title {
+  font-size: 36rpx;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+}
+
+/* 空状态 */
+
+.mySub_null {
+  width: 100%;
+  height: 440rpx;
+  margin-top: 30%;
+  text-align: center;
+}
+
+.mySub_null image {
+  width: 100%;
+  height: 100%;
+}
+
+.mySub_null_text {
+  font-size: 36rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #666;
+  line-height: 21rpx;
+}
+
+/* 内容 */
+
+.mySub_main {
+  width: 100%;
+  height: 100%;
+  padding: 0 30rpx 30rpx;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mySub_list {
+  width: 100%;
+  background: #fff;
+  margin-top: 30rpx;
+}
+
+.mySub_top {
+  width: 100%;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f3f3f3;
+  display: flex;
+}
+
+.mySub_list_pic {
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 24rpx;
+}
+
+.mySub_list_text {
+  width: 80%;
+}
+
+.title {
+  width: 100%;
+  font-size: 30rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #2a2a2a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info {
+  width: 100%;
+  height: 80rpx;
+  font-size: 24rpx;
+  font-family: "PingFang-SC-Regular";
+  font-weight: 400;
+  color: #666;
+  line-height: 76rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.showInfo {
+  width: 100%;
+  font-size: 22rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #666;
+  display: flex;
+  align-content: center;
+}
+
+.showInfo .left {
+  margin-right: 89rpx;
+}
+
+.library {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.inventory {
+  width: 17rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.mySub_bottom {
+  width: 100%;
+  padding: 30rpx 20rpx 0;
+}
+
+.mySub_bottom_info {
+  padding: 14rpx 17rpx 14rpx 11rpx;
+  background: #f5f5f5;
+  font-size: 24rpx;
+  font-family: "PingFang-SC-Regular";
+  font-weight: 400;
+  color: #999;
+}
+
+.mySub_bottom_infos {
+  font-size: 24rpx;
+  font-family: "PingFang-SC-Regular";
+  font-weight: 400;
+  color: #666;
+  line-height: 83rpx;
+}
+
+.mySub_bottom_time {
+  font-size: 18rpx;
+  font-family: "PingFang-SC-Medium";
+  font-weight: 500;
+  color: #8e8e8e;
+  line-height: 50rpx;
+}

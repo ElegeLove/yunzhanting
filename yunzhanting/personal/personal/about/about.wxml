@@ -1,0 +1,10 @@
+<!--pages/page/personal/about/about.wxml-->
+
+<import src="../../../wxParse/wxParse.wxml"/>
+
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">关于我们</view>
+</cu-custom>
+<view class='content'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

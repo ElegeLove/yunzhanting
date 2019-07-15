@@ -1,0 +1,29 @@
+<!--page/home/explosives/explosives.wxml-->
+<!-- 头部 -->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">gradualBluegreen
+  <view class='page_title' slot="backText">爆品推荐</view>
+</cu-custom>
+<!-- 搜索框 -->
+<view class='header_search'>
+  <view class="cu-bar search" bindtap='bindSearch'>
+    <view class="search-form round">
+      <text class="header_icon cuIcon-search"></text>
+      <input type="text" placeholder="路由器" disabled='disabled' confirm-type="search" bindinput="searchIcon"></input>
+    </view>
+  </view>
+</view>
+<!-- 内容 -->
+<view class='explosives'>
+  <view class='explosives_title'>
+    <image class='title_pic' src='/assets/images/ic_explosives.png'></image>
+    <text class='title_text'>爆品推荐</text>
+    <image class='title_pic' src='/assets/images/ic_explosives.png'></image>
+  </view>
+  <view class='explosives_main'>
+    <view class='explosives_main_list' wx:for='{{exList}}' wx:key bindtap='bindInfo' data-id='{{item.id}}'>
+      <image class='explosives_main_list_pic' src='{{item.smallImgPath}}'></image>
+      <view class='explosives_main_list_text'>{{item.name}}</view>
+    </view>
+  </view>
+
+</view>

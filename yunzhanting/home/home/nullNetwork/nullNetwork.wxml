@@ -1,0 +1,11 @@
+<!--pages/nullNetwork/nullNetwork.wxml-->
+<!-- 头部 -->
+<cu-custom bgColor="bg-gradual-Bluegreen" isBack="{{true}}">
+  <view class='page_title' slot="backText">云展厅</view>
+</cu-custom>
+<view class='nullNetwork'>
+  <image src='/assets/images/ic_nullNetwork.png'></image>
+  <view class='nullNetwork_text'>
+    网络出问题了，快去检查一下吧~
+  </view>
+</view>

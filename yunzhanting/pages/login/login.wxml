@@ -1,0 +1,21 @@
+<view wx:if="{{canIUse}}">
+  <cu-custom>
+    <view slot="content">授权登录</view>
+  </cu-custom>
+  <view class='header'>
+    <view>
+      <open-data class="headImg" type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+
+  <view class='content'>
+    <view>申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+<!--  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"-->
+<!--  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" -->
+  <button class='bottom' type='primary' lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    授权登录
+  </button>
+</view>
+<view wx:else>请升级微信版本</view>
